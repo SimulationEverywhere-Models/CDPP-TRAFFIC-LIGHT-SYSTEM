@@ -1,0 +1,1 @@
+./simu -mintersection.ma -t0:3:0:0 -ointersection.out -lintersection.log -eintersection.ev

@@ -1,0 +1,1 @@
+./simu -mtraffic_light.ma -t00:30:0:0 -otraffic_light.out -ltraffic_light.log -etraffic_light.ev

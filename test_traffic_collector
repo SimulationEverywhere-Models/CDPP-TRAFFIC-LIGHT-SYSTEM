@@ -1,0 +1,1 @@
+./simu -mtraffic_collector.ma -t0:30:0:0 -otraffic_collector.out -ltraffic_collector.log

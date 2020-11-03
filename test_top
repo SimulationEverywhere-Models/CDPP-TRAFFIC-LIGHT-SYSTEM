@@ -1,0 +1,1 @@
+./simu -mtop.ma -t0:30:0:0 -otop.out -ltop.log

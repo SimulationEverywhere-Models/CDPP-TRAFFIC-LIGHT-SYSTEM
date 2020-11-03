@@ -1,0 +1,2 @@
+
+./simu -mgroup_controller.ma -t0:3:0:0 -ogroup_controller.out -lgroup_controller.log

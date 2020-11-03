@@ -1,0 +1,2 @@
+
+./simu -mintersection_controller.ma -t0:3:0:0 -ointersection_controller.out -lintersection_controller.log

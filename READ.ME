@@ -1,0 +1,116 @@
+
+Assume that the cygwin is installed in c:\cygwin diectory, your cygwin
+home directory is /home/administrator/, and the cd++ is installed in
+/home/administrator/cd++/ directory.
+
+1. open a cygwin window by running the "c:\cygwin\cygwin.bat", assume
+   your home directory is /home/administrator
+
+2. unzip the TraficLigthSystem.zip to c:\cygwin\administartor\cd++\
+   directory, overwrite any existing file if asked.
+
+3. Start cygwin to compile and build the simulation
+
+	cd /home/administrator/cd++/
+	make -f makefile clean
+	make -f makefile
+
+
+Note: we also use the existing queue and generater atomic models, so
+do not remove them from your cd++ directory.
+
+
+4. Run the simulation
+
+	chmod +x run test*
+	
+you can run test cases with one command "./run", or by seperated 
+commands as following:
+
+please see attached TrafficLightSystem.doc for the components structure 
+of each test case.
+
+To test LightGroupController atomic model, enter
+
+	./test_group_controller
+
+
+To test TrafficLightController atomic model, enter
+
+	./test_light_controller
+
+
+To test GenericQueue atomic model with limited capacity, enter
+
+	./test_lane_queue_limited
+
+
+To test GenericQueue atomic model with unlimited capacity, enter
+
+	./test_lane_queue_unlimited
+
+
+To test IntersectionQueue atomic model, enter
+
+	./test_intersection_queue
+
+
+To test IntersectionController atomic model, enter
+
+	./test_intersection_controller
+
+
+To test Intersection coupled model, enter
+
+	./test_intersection
+
+
+To test Lane coupled model, enter
+
+	./test_lane
+
+
+To test TrafficLight coupled model, enter
+
+	./test_traffic_light
+
+
+To test Top model, enter
+
+	./test_top
+
+
+Note: 
+
+1.	For all tests above, if the test command is like test_xxxxx,
+    then the following files are used as input or output for test:
+
+	Model file:  xxxxx.ma
+	event file:  xxxxx.ev   if used
+	output file: xxxxx.out
+	log file:    xxxxx.log
+
+2.  There are following mapping between output value and real meaning:
+
+	standby_out@LightGroupController:  value not cared
+	lights@LightGroupController:	   1 - RED, 2 - GREEN, 3 - YELLOW
+	
+	out@TrafficLightController:		0 - enable passing, 1 - disable
+	light@TrafficLightController:   1 - RED, 2 - GREEN, 3 - YELLOW
+
+	out@Generator:	    car id
+
+	out@GenericQueue:	car id
+	next@GenericQueue:  value not cared.
+	block@GenericQueue: value not cared.
+
+	out@IntersectionQueue:	 time of a car staying in intersection controller in seconds.
+	next@IntersectionQueue:  value not cared.
+	block@IntersectionQueue: value not cared.
+
+	out@IntersectionController:  value not cared
+	busy@IntersectionController: value not cared
+
+	throuput@TarfficCollector:			number of cars leaving intersection per minute
+	curQueueLength@TarfficCollector:	current number of cars not leaving intersection.
+	aveQueueLength@TarfficCollector:	average number of cars notleaving intersection.

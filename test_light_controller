@@ -1,0 +1,1 @@
+./simu -mlight_controller.ma -t0:3:0:0 -olight_controller.out -llight_controller.log -elight_controller.ev
